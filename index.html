@@ -1,87 +1,59 @@
+<!-- TTQ视觉小说引擎2.0.0 -->
+<!-- index.html -->
+ 
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>TextEditor官网</title>
-    <link rel="shortcut icon" href="Image/icon.png" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>视觉小说</title>
+    <link rel="stylesheet" href="css/样式.css">
 </head>
 
 <body>
-    <div class="div1">
-        <h1>
-            TextEditor
-        </h1>
-        <p class="简介文本">简单的文本编辑器，无广告，拒绝臃肿！</p>
-        <div class="textDiv">
-            <p>
-                你好👋
-                <br>
-                这里是TextEditor的官网！
-                <br>
-                你可以在这个网站看到TextEditor的介绍，更新计划，以及所有版本！最新版、旧版、定制版应有尽有！
-            </p>
+    <!-- 立绘容器 -->
+    <img id="左立绘" class="立绘">
+    <img id="中立绘" class="立绘">
+    <img id="右立绘" class="立绘">
+    <!-- 主界面 -->
+    <div class="主容器">
+        <div id="对话框容器">
+            <div class="角色"></div>
+            <div class="内容"></div>
+            <div class="选项容器"></div>
         </div>
-        <p class="文本">
-            <samp>
-                简介
-            </samp>
-            <br>
-            TextEditor，简单方便的文本编辑器。纯洁无广，轻松创建文件夹、保存文件至本地，选择自己的文件编辑也是易如反掌！让整个码字过程心情愉悦，没有限制！
-        </p>
-        <p class="文本">
-            <samp>
-                更新计划
-            </samp>
-            <br>
-            之后会研究导出为图片、进入程序返回之前编辑文本、记住之前保存/编辑的文件名称（这样保存时就不用重新输入名字了）等等功能，还有UI也可能会重新设计一下。
-            <br>
-            这里也欢迎大家在<a href="https://b23.tv/Cq2TrcB">我的B站</a>评论区或私信发表自己的想法！大概率都会加入之后的更新~
-        </p>
-        <div class="下载Div">
-            <div class="TextEditor">
-                <img src="Image/icon.png" alt="图片加载失败" />
-                <button onclick="TextEditor下载()">下载</button>
-                <samp>
-                    TextEditor
-                </samp>
-                <p>
-                    <b>最新版</b>
-                    <br>
-                    增加了符号快捷键功能,增加了选择配色功能,增加了一些细节……
-                </p>
-            </div>
-            <div class="TextEditor-YF">
-                <img src="Image/icon2.png" alt="图片加载失败" />
-                <button onclick="TextEditorYF下载()">下载</button>
-                <samp>
-                    TextEditor-YF
-                </samp>
-                <p>
-                    <b>云飞最新定制版</b>
-                    <br>
-                    给好朋友的定制款，拥有散兵猫猫主题。
-                </p>
-            </div>
-            <div class="历史版本">
-                <img src="Image/icon1.png" alt="图片加载失败">
-                <button onclick="查看历史版本()">查看</button>
-                <samp>
-                    More…
-                </samp>
-                <p>
-                    <b>更多历史版本</b>
-                    <br>
-                    注意⚠️这些版本可能会存在致命bug，谨慎使用。
-                </p>
-            </div>
-        </div>
-        <small class="作者信息">@2025Tian</small>
     </div>
-
-    <script src="main.js"></script>
+    <!-- 存档按钮 -->
+    <button class="存档按钮" onclick="打开存档界面()">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-content-save-outline" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M17 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V7L17 3M19 19H5V5H16.17L19 7.83V19M12 12C10.34 12 9 13.34 9 15S10.34 18 12 18 15 16.66 15 15 13.66 12 12 12M6 6H15V10H6V6Z" fill="#fff" />
+        </svg>
+    </button>
+    <!-- 存档界面 -->
+    <div id="存档界面" class="隐藏">
+        <div class="标题">存档管理</div>
+        <div class="存档列表">
+            <div class="存档项" data-slot="1" onclick="保存存档(1)">
+                <span>存档位1</span>
+                <button class="加载按钮" onclick="加载存档(1)">加载</button>
+            </div>
+            <div class="存档项" data-slot="2" onclick="保存存档(2)">
+                <span>存档位2</span>
+                <button class="加载按钮" onclick="加载存档(2)">加载</button>
+            </div>
+            <div class="存档项" data-slot="3" onclick="保存存档(3)">
+                <span>存档位3</span>
+                <button class="加载按钮" onclick="加载存档(3)">加载</button>
+            </div>
+        </div>
+        <button class="关闭按钮" onclick="关闭存档界面()">×</button>
+    </div>
+    <!-- 音乐播放器 -->
+    <audio id="背景音乐" class="隐藏"></audio>
+    <!-- 章节加载（每新建一个章节就要在章节库中增加） -->
+    <script src="js/章节/序章.js"></script>
+    <script src="js/TTQ视觉小说引擎.js"></script>
 </body>
 
 </html>
