@@ -1,0 +1,16 @@
+{
+   "图标": "Dvnge.png",
+   "名称": "Dvnge视觉小说",
+   "包名": "ttq.dvnge.games",
+   "版名": "1.0",
+   "版号": "1",
+   "内容": "index.html",
+   "全屏": true,
+   "横屏": true,
+   "端口": "",
+   "脚本": "webapp.circle(false);webapp.renew(false);webapp.video(false);webapp.record();",
+   "标识": "",
+   "协议": "",
+   "拦截": "",
+   "加密": ""
+}
