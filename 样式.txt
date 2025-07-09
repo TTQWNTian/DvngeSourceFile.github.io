@@ -1,4 +1,4 @@
-/* TTQ视觉小说引擎v2.0.0-beta1 */
+/* TTQ视觉小说引擎2.0.0 */
 /* css/样式.css */
 /* 基础样式 */
 
@@ -47,7 +47,7 @@ body {
 .角色 {
     font-weight: bold;
     margin-bottom: 10px;
-    color: #ff9999;
+    color: #6366f1;
 }
 
 .内容 {
@@ -143,7 +143,7 @@ body {
 
 .加载按钮 {
     padding: 8px 15px;
-    background: #4CAF50;
+    background: #6366f1;
     border: none;
     border-radius: 5px;
     color: white;
@@ -168,7 +168,7 @@ body {
 }
 
 .关闭按钮:hover {
-    color: #ff9999;
+    color: #6366f1;
     background: rgba(255, 255, 255, 0.1);
     transform: rotate(90deg);
 }
@@ -182,7 +182,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.8);
-    color: #4CAF50;
+    color: #6366f1;
     padding: 12px 24px;
     border-radius: 25px;
     font-size: 14px;
@@ -216,8 +216,8 @@ body {
 .输入确认按钮 {
     align-self: flex-end;
     background: rgba(255, 153, 153, 0.5);
-    border: 1px solid #ff9999;
-    color: #ff9999;
+    border: 1px solid #6366f1;
+    color: #6366f1;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
